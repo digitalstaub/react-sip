@@ -10,6 +10,7 @@
     "format": "prettier --write --ignore-path .gitignore \"{.,src/**}/{*.js,*.ts,*.md,*.json}\"",
     "lint": "tsc --project . --noEmit && tslint --project . && prettier-check --ignore-path .gitignore \"{.,src/**}/{*.js,*.ts,*.md,*.json}\"",
     "prepublish": "npm run build",
+    "postinstall": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

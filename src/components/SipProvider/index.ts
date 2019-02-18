@@ -246,7 +246,7 @@ export default class SipProvider extends React.Component<
     });
   };
 
-  public startCall = (destination) => {
+  public startCall = (destination, callOptions={}) => {
     if (!destination) {
       throw new Error(`Destination must be defined (${destination} given)`);
     }
@@ -280,6 +280,7 @@ export default class SipProvider extends React.Component<
         iceServers,
       },
       sessionTimersExpires,
+      ...callOptions
     };
 
     this.ua.call(destination, options);
